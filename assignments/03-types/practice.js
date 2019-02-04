@@ -69,7 +69,21 @@ var randBetween = function (a,b) {
 //     isSuit("coins");
 //     //=> false
 var isSuit = function (a) {
-   return [clubs, diamonds, hearts, spades].includes(a.toLowerCase());
+    if(a.toLowerCase()=='hearts'){
+        return true;
+    }
+    else if(a.toLowerCase()=='clubs'){
+        return true;
+    }
+    else if(a.toLowerCase()=='diamonds'){
+        return true;
+    }
+    else if(a.toLowerCase()=='spades'){
+        return true;
+    }
+    else{
+        return false;
+    }
 
 };
 
@@ -86,14 +100,26 @@ var isSuit = function (a) {
 //
 //     isRank("one");
 //     //=> false
-var isRank = function () {
+var isRank = function (a) {
+   return ['two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'jack', 'queen', 'king' ,'ace'].includes(a.toLowerCase());
+
 };
 
 
 // Using the previous two functions, write a function called isCard that accepts
 // two arguments, a rank and a suit, and returns true if they are valid for a card,
 // and false otherwise.
-var isCard = function () {
+var isCard = function (a,b) {
+
+
+    
+if(isSuit(a)  === true && isRank(b) === true){
+    return true;
+}
+else{
+    return false;
+}
+
 };
 
 
@@ -102,7 +128,14 @@ var isCard = function () {
 // Remember that you can use strings in comparisons in the same way that you can
 // use numbers, and the ordering is alphabetical (with capital letters having lower
 // values than their lower-case counterparts).
-var isCapitalized = function () {
+
+var isCapitalized = function (a) {
+
+    if(a.charAt(0)==a.charAt(0).toUpperCase()){
+        return true;}
+        else{
+            return false
+        }
 };
 
 
@@ -115,7 +148,8 @@ var isCapitalized = function () {
 //
 //     getHTMLText("<li>this is a list item</li>");
 //     //=> this is a list item
-var getHTMLText = function () {
+var getHTMLText = function (a) {
+
 };
 
 
