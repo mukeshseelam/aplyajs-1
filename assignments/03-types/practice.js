@@ -149,8 +149,13 @@ var isCapitalized = function (a) {
 //     getHTMLText("<li>this is a list item</li>");
 //     //=> this is a list item
 var getHTMLText = function (a) {
+    return a.split('>')[1].split('</')[0];
 
 };
+
+
+//20 marks below F 30 marks below e  50-d  70-c  80 -b  90-a
+
 
 
 // Write a function that determines if a string represents an HTML element. This
@@ -170,5 +175,20 @@ var getHTMLText = function (a) {
 //
 // It may help in this case to look up the `lastIndexOf` method on the string
 // objects.
-var isHTMLElement = function () {
+var isHTMLElement = function (a) {
+
+
+if(a.charAt(0)=='<' && a.charAt(a.length -1)=='>'){
+    if(a.split('<')[1].split('>')[0]===a.split('>')[1].split('</')[1]){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+else{
+    return false;
+}
+
 };

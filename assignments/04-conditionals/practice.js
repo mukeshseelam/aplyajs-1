@@ -12,7 +12,17 @@
 //
 //     passwordStrength("helloone");
 //     //=> medium
-var passwordStrength = function () {
+var passwordStrength = function (a) {
+
+    if(a.length>=10){
+        return 'strong';
+    }
+    else if(a.length<10 && a.length>=7){
+        return 'medium';
+    }
+    else{
+        return 'weak';
+    }
 };
 
 
